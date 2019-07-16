@@ -15,6 +15,8 @@ function create(doc) {
                 password: hash,
                 createdAt: Date.now(),
             });
+
+            console.log(`inserting user into database`);
             usersdb.insert(user, (err, saved) => {
                 err ? reject(err) : resolve(saved);
             });
@@ -25,6 +27,7 @@ function create(doc) {
 function findByEmail(email) {
     return new Promise((resolve, reject) => {
         usersdb.findOne({ email }, (err, user) => {
+            console.log(`db result: user:${user}, error:${err}`)
             err ? reject(err) : resolve(user);
         });
     });

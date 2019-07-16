@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 
 import { host, port, env } from 'c0nfig';
 import api_v1 from './v1';
+import * as middleware from './middleware';
 /****************************************/
 
 const app = express();
@@ -19,6 +20,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/v1', api_v1());
+app.use(middleware.notFoundHandler);
+app.use(middleware.errorHandler);
 
 http.createServer(app).listen(port, err => {
     if (err) {

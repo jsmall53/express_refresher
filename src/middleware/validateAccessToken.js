@@ -1,5 +1,6 @@
 import config from 'c0nfig';
-import validateToken from '../v1/token';
+import { validateToken } from '../v1/token';
+import * as errors from '../utils/errors';
 // const version = config.apiVersion;
 // const validateToken = require(`../v${version}/token`);
 
