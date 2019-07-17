@@ -7,14 +7,14 @@ const { signKey, tokenTTL } = config.auth;
 function generateToken(email) {
     const timestamp = moment();
     const message = `${email};${timestamp.valueOf()}`;
-    console.log('generating token');
+    // console.log('generating token');
     // TODO: change from 'sha1'
     const hmac = crypto.createHmac('sha1', signKey)
                        .update(message)
                        .digest('hex');
     const token = `${message};${hmac}`;
     const tokenBase64 = Buffer.from(token).toString('base64');
-    console.log('finished generating token');
+    // console.log('finished generating token');
     return tokenBase64;
 }
 
@@ -41,7 +41,7 @@ function validateToken(token) {
     if (tokenLife >= tokenTTL) {
         return false;
     }
-    console.log(`token validated: ${email}`);
+    // console.log(`token validated: ${email}`);
     return email;
 }
 
