@@ -16,7 +16,7 @@ function create(doc) {
                 createdAt: Date.now(),
             });
 
-            console.log(`inserting user into database`);
+            // console.log(`inserting user into database`);
             usersdb.insert(user, (err, saved) => {
                 err ? reject(err) : resolve(saved);
             });
