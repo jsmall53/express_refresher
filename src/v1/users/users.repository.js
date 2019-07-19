@@ -27,7 +27,6 @@ function create(doc) {
 function findByEmail(email) {
     return new Promise((resolve, reject) => {
         usersdb.findOne({ email }, (err, user) => {
-            console.log(`db result: user:${user}, error:${err}`)
             err ? reject(err) : resolve(user);
         });
     });
