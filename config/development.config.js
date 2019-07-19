@@ -1,4 +1,4 @@
-const host = require('network-address');
+const host = require('network-address')();
 
 module.exports = {
     port: process.env.PORT || process.env.NODE_PORT || 8081,
