@@ -1,7 +1,10 @@
 import { expect, should } from 'chai';
 
-import * as user_repo from '../../src/v1/users/users.repository';
-import userDB from '../../src/v1/users/users.db';
+import * as user_repo from '../../../src/v1/users/users.repository';
+
+import Datastore from 'nedb';
+const usersDB = new Datastore()
+users_db.ensureIndex({ fieldName: 'email', unique: true });
 
 describe("user.repository", function() {
     describe("create", function() {
