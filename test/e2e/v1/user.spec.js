@@ -2,10 +2,6 @@ import { expect, should } from 'chai';
 
 import * as user_repo from '../../../src/v1/users/users.repository';
 
-import Datastore from 'nedb';
-const usersDB = new Datastore()
-users_db.ensureIndex({ fieldName: 'email', unique: true });
-
 describe("user.repository", function() {
     describe("create", function() {
         it("should insert a user into the database", function(done) {

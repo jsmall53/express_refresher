@@ -1,5 +1,5 @@
 import { expect, should } from 'chai';
-import { generateToken, validateToken } from '../../src/v1/token';
+import { generateToken, validateToken } from '../../../src/v1/token';
 import { isExportDeclaration } from 'typescript';
 
 describe("token", function() {
